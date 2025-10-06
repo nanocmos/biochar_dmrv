@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biochar dMRV</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .iframe-container {
+      width: 100%;
+      /*
+      * Modern approach: Use the aspect-ratio property.
+      * Excellent support in modern browsers.
+      * This creates a 16:9 aspect ratio.
+      */
+      aspect-ratio: 16 / 9;
+
+      /*
+      * Fallback for older browsers: Use the padding-top hack.
+      * This ensures responsiveness even if aspect-ratio isn't supported.
+      * We use @supports to apply this only where needed.
+      */
+      @supports not (aspect-ratio: 16 / 9) {
+        position: relative;
+        height: 0;
+        padding-top: 56.25%; /* 9 / 16 = 0.5625 */
+      }
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0; /* Removes the default iframe border */
+
+      /* Position the iframe absolutely for the padding-top fallback */
+      @supports not (aspect-ratio: 16 / 9) {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Biochar dMRV</h1>
+
+  <div class="iframe-container">
+    <iframe
+      src="https://script.google.com/macros/s/AKfycbxzQlBJ2ffa3zy2cPWGe7eSy75q6y8LISvPhg6MVuFV/dev"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+</body>
+</html>
